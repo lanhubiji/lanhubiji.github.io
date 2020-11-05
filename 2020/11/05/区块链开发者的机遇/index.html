@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>[论文]智能合约间的跨链调用 | 蓝狐笔记 lanhubiji</title>
-  <meta name="keywords" content=" 智能合约(Smart Contract) ">
-  <meta name="description" content="[论文]智能合约间的跨链调用 | 蓝狐笔记 lanhubiji">
+  <title>区块链开发者的机遇 | 蓝狐笔记 lanhubiji</title>
+  <meta name="keywords" content=" 区块链(Blockchain) ">
+  <meta name="description" content="区块链开发者的机遇 | 蓝狐笔记 lanhubiji">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="_ 前言：2010 年 9 月到 2017 年 9 月，比特币的平均月回报率为 25%，但也极具波动性，如果在做一个最优的投资组合，是否要投资比特币？如果投资，应该占据多大比例？如果不是，又是为什么？本文作者 Nick Maggiulli，来源于 ofdollarsanddata.com，由蓝狐笔记社群“Joey”翻译。_ 加密货币的时代已经来临，比特币正在引领这股潮流。如果你还不知道比特币，请告">
 <meta property="og:type" content="article">
@@ -345,9 +345,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-论文-智能合约间的跨链调用" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-区块链开发者的机遇" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">[论文]智能合约间的跨链调用</h1>
+        <h1 class="article-title">区块链开发者的机遇</h1>
     
     <div class="article-meta">
         
@@ -357,7 +357,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="论文">论文</a>
+            <a  data-rel="博客">博客</a>
             
         </span>
         
@@ -365,19 +365,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color1">智能合约(Smart Contract)</a>
+            <a class="color1">区块链(Blockchain)</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2020-11-05 07:32:34'>2020-11-05 07:32</time>
+            发布时间 : <time class="date" title='最后更新: 2020-11-05 18:29:03'>2020-11-05 18:29</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:889</span>
+        <span>字数:1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -423,17 +423,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>跨链为什么如此重要，这跟我们理解未来区块链世界有很大关系。或者更准确说我们是如何理解未来的世界的？世界是走向单一独大还是多元？你的答案呢？</p>
-<p>我的答案是多元的，世界走出以美国独大的，到G2, 美国，中国的多元格局。<br>加密世界也从比特币独大中走出了以太坊。<br>在自然世界中，我们都努力地进行熵增的活动以增强自身的存在，但自然规律则是不断熵减不确定和多元。</p>
-<p>那么，如今如果DeFi，智能合约还继续局限于以太坊，那就可惜了。<br>我理解的区块链未来，如同刘毅老师多次提到的，万链互联一样，我们将会有很多各种不同场景下的区块链。有中心化的链，也有去中心化的链，有适合金融交易的链，也有适合供应链的区块链。</p>
-<p>在这样的前提假设下，那么跨链就变得重要，无论是交易的跨链，还是智能合约中的跨链调用。跨链交易我们听得多了，也有很多项目在做，如DOT, ATOM,等。而本论文对智能合约间的跨链调用进行了尝试。由于，链间状态都只能存在于本链，跨链调用结果不理想，如时间开销至少是5倍，成本开销是40倍。</p>
-<p>论文：Towards Cross-Blockchain Smart Contracts /走向跨区块链的智能合约<br>作者：Markus Nissl, Emanuel Sallinger, Stefan Schulte, Michael Borkowski<br>日期：14 Oct 2020<br>链接：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2010.07352.pdf">https://arxiv.org/pdf/2010.07352.pdf</a></p>
-<p><strong>1 概论</strong></p>
-<p>近年来，研究人员和公司都提出了多种区块链协议。这导致了一个非常异构的区块链格局。因此，如果区块链能够相互作用，这将是可取的。然而，目前的区块链技术只对互操作性提供有限的支持，从而限制代币或智能合约只能在特定区块链的范围。</p>
-<p>作为跨链智能合约交互解决方案的第一步，我们引入了一个允许从另一个区块链调用智能合约的框架。我们支持在收到不同区块链的结果后继续智能合约，并支持跨区块链的递归调用智能合约。我们为基于以太坊的区块链提供了一个参考实现，并评估了时间和成本开销方面的性能。</p>
-<p><strong>7 结论</strong></p>
-<p>在本文中，我们提出了一种跨区块链调用智能合约的方法。该方法不仅支持单个跨链智能合约调用，而且支持递归调用和接收结果后智能合约的继续执行。我们的解决方案考虑到区块链的并发性和一致性以及交易费用和奖励的支付。方案的实现已经通过几个测试进行了评估，结果表明时间开销至少是5倍，成本开销是40倍。</p>
-<p>在未来的工作中，我们将研究降低跨链调用成本的方法。可能的选择包括使用链外事务、优化源代码或与中继网络混合的方法。此外，我们希望通过增加正确投票的激励来改进投票机制。此外，我们希望增加对代币转移的支持，并为进一步的区块链技术实施智能合约。</p>
+        <p>前言：虽然区块链二级市场近期表现欠佳，但在 2017 年和 2018 年上半年有为数不少的区块链项目融到大量资金，区块链开发者本来就稀缺，随着大量项目融到可观的资金，区块链开发者稀缺性进一步加剧，随之而来的区块链开发者的报酬上涨。对于懂得区块链的开发者来说，这是一个前所未有的机遇。本文作者 _Michiel Mulders，来源于 hackernoon.com 由蓝狐笔记社群“鑫鑫”翻译。</p>
+<p><img src="/images/2020/11/05/2e3864d9-eec0-4ddb-9248-5dae60c0a800.jpg" alt="ea88895ceec96b9ef677077b9e6a9702.jpg"><br>2 月 14 号发布在 TechCrunch 上的一篇文章显示，现在区块链工程师存在大量人才缺口。目前，每一位区块链开发者手中都握有 14 个 offer。虽然今年在区块链领域的“收入 / 知识”比率在进一步上升，资本的扩张速度仍然大幅领先于人才。<br><img src="/images/2020/11/05/c7c5e939-423f-4d7b-98be-7ce34e7cb850.jpg" alt="e76a8ba3531d31064fc7d0ea72f72491.jpg"><br>区块链领域人才的需求正在暴增。去年，自由职业人才市场 Upwork 发现，根据自由职业者排名，在超过 5000 种技能列表中，区块链技能的增长速度最快——年增长率超过 35000%。这些需求覆盖了智能合约开发、区块链工程项目和区块链综合咨询顾问。</p>
+<p>下面是需求量排名前三的技能：</p>
+<p>Hyperleger Fabric：一个专注于模块化和可扩展性的企业级区块链框架，支持变化的企业规则<br>Ripple 开发：一种用于汇款、支付和交易的分布式处理的支付协议<br>Solidity：以太坊上的智能合约开发<br>区块链生态中有比肩传统金融行业公司的高薪职位，例如美国银行、Visa 和其他公司都在搜寻和探索区块链技术。</p>
+<p><img src="/images/2020/11/05/8ff2919a-84eb-4ae9-9a23-e1c2090df528.jpg" alt="f7985c657ff42ce4e1b6bca372aa2629.jpg"><br>据 ComputerWorld 估计，美国的区块链开发者每年可以挣到 130k 美元。同时，软件开发者每年可以挣到 105k 美元。这些数据是由从事数据分析活动的 Burning Glass Technologies 公司的首席执行官 Matt Siegelman 发布的。</p>
+<p>我们能做什么？</p>
+<p>首先，iOlite 是一个可以帮忙填补人才空缺的项目。他们正在开发一种能够理解自然语言并把它们翻译成可执行的智能合约代码的产品。这似乎是一个理想的解决方案。</p>
+<p>尽管我们仍然需要有智能合约开发知识的开发者来定义和 Solidity 代码相关联的结构，从而普通用户就可以用这个结构库来创建他们想要的智能合约。为了能让开发者们也能更容易的创建智能合约，我们提供开发者插件来把各种编程语言翻译成智能合约代码。</p>
+<p>大量的在线课程（MOOC）平台试图通过提供区块链相关的编程课程来追赶区块链技术。这为普通开发者跳入这个全新的激动人心的区块链开发的世界提供了可能性。高“收入 / 知识”比也是开发者们想成为区块链开发者的另一个动机。<br><img src="/images/2020/11/05/69e4c3db-94ca-4834-9889-15af2cde19f2.jpg" alt="f8fbdd831c2ec8ef345af61bca7683cd.jpg"><br>虽然，我们注意到这些课程在这件事情上不能提供有深度的知识。我们不期望一个 MOOC 的毕业生能开发一个可以用来做 I C O 的高质量的智能合约，另外他们也不应该这样做因为我们在谈论数以百万计的美元。<br><img src="/images/2020/11/05/bbaaff64-698a-436c-a3db-d4759ca90130.jpg" alt="44744c4c95f7db271529a79650719542.jpg"><br>最后，类似于 Toptal 的私有人才网络可以提供为公司做咨询顾问的顶级质量的区块链工程人才。这使得公司更容易发现区块链人才。</p>
+<p>以太坊创始人 Vitalik Buterin 认为区块链开发者应该被多个公司雇佣以让他们积累的知识更加大众化，从而更多开发者可以发现和探索区块链的可能性。如果有一个“伙伴”来指导你，开始区块链开发的学习会变得更加容易。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 风险警示：蓝狐笔记所有文章都不能作为投资建议或推荐，投资有风险，投资应该考虑个人风险承受能力，建议对项目进行深入考察，慎重做好自己的投资决策。加入蓝狐笔记的知识星球：https://t.zsxq.com/Iq3VzfM 欢迎加入蓝狐笔记群微信：donnell008 </span>
