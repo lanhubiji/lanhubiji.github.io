@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>学习区块链的最好方法是构建一个（下） | 蓝狐笔记 lanhubiji</title>
-  <meta name="keywords" content=" 区块链(Blockchain) ">
-  <meta name="description" content="学习区块链的最好方法是构建一个（下） | 蓝狐笔记 lanhubiji">
+  <title>蓝狐笔记 lanhubiji</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="蓝狐笔记 lanhubiji">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="今天先不说区块链，来看看世界运作的一个有意思的现象。同样一个作者，不同的笔名为什么销量千差万别？为什么起步的优势导致后续产生的差距越来越大？这对于我们每个人有什么启示？对于蓝狐笔记来说，其中一个重要的启示是：如果某个领域别人已确立先发优势，追赶是徒劳的。更重要的是找到新的领域，建立属于自己的先发优势。本文来源于 ofdollarsanddata.com，作者是 Nick Maggiulli，由蓝狐">
 <meta property="og:type" content="article">
@@ -556,39 +556,22 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-学习区块链的最好方法是构建一个（下）" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">学习区块链的最好方法是构建一个（下）</h1>
+        <article id="post-让产品设计变得简单的两个方法" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            <i class="iconfont icon-category"></i>
-            
-            
-            <a  data-rel="博客">博客</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color1">区块链(Blockchain)</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2020-11-09 17:09:07'>2020-11-08 06:03</time>
+            发布时间 : <time class="date" title='最后更新: 2020-11-21 05:34:28'>2020-11-21 05:33</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.5k</span>
+        <span>字数:876</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -618,7 +601,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A9%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E5%8F%98%E5%BE%97%E7%AE%80%E5%8D%95%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%96%B9%E6%B3%95"><span class="toc-text">让产品设计变得简单的两个方法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -634,63 +617,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前言：深入理解区块链最好的方式莫过于亲手搭建一个，在这个过程中理解它背后的逻辑和原理。本文作者是 Danielvan Flymen ，文章来源于 hackernoon.com，由蓝狐笔记社群“iGreenMind”翻译。_</p>
-<p>接上一篇《学习区块链的最好方法是构建一个（上）》<br>第三步：与我们的区块链交互<br>**<br>**</p>
-<p>你可以使用普通的 cURL 或 Postman 工具，通过网络与我们的 API 进行交互。</p>
-<p>启动服务器：</p>
-<p>$ python blockchain.py<br>*Running on <a target="_blank" rel="noopener" href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a> (Press CTRL+C to quit)<br>让我们尝试通过向 <a target="_blank" rel="noopener" href="http://localhost:5000/mine">http://localhost:5000/mine</a> 发出 GET 请求来挖掘一个区块：</p>
-<p><img src="/images/2020/11/08/273bbbbf-c7b0-4e20-9849-ad54e28b7027.jpg" alt="ef0bdb049221c74387314fe0509d519f.jpg"><br>UsingPostman to make a GET request</p>
-<p>让我们通过向 <a target="_blank" rel="noopener" href="http://localhost:5000/transactions/new">http://localhost:5000/transactions/new</a> 发出一个 POST 请求来创建一个新的交易，这个交易包含了交易结构的主体 :<br><img src="/images/2020/11/08/4411180f-7f78-4070-8bf8-063f59d361f3.jpg" alt="8e532c758a349ead1a431efba8880572.jpg"><br>UsingPostman to make a POST request</p>
-<p>如果你不使用 Postman 工具，同样可以使用 cURL 这个工具来实现同样的目的：</p>
-<p>$ curl -X POST -H “Content-Type: application/json” -d ‘{<br>“sender”: “d4ee26eee15148ee92c6cd394edd974e”,<br>“recipient”: “someone-other-address”,<br>“amount”: 5<br>}’ “<a target="_blank" rel="noopener" href="http://localhost:5000/transactions/new&quot;">http://localhost:5000/transactions/new&quot;</a><br>重启了我的服务器，并挖掘了两个区块，总共给出了 3 个区块。让我们通过请求 <a target="_blank" rel="noopener" href="http://localhost:5000/chain">http://localhost:5000/chain</a> 检查整个链：</p>
-<p>{<br>“chain”: [<br>{<br>“index”: 1,<br>“previous_hash”: 1,<br>“proof”: 100,<br>“timestamp”: 1506280650.770839,<br>“transactions”: []<br>},<br>{<br>“index”: 2,<br>“previous_hash”: “c099bc…bfb7”,<br>“proof”: 35293,<br>“timestamp”: 1506280664.717925,<br>“transactions”: [<br>{<br>“amount”: 1,<br>“recipient”: “8bbcb347e0634905b0cac7955bae152b”,<br>“sender”: “0”<br>}<br>]<br>},<br>{<br>“index”: 3,<br>“previous_hash”: “eff91a…10f2”,<br>“proof”: 35089,<br>“timestamp”: 1506280666.1086972,<br>“transactions”: [<br>{<br>“amount”: 1,<br>“recipient”: “8bbcb347e0634905b0cac7955bae152b”,<br>“sender”: “0”<br>}<br>]<br>}<br>],<br>“length”: 3<br>}<br>第四步：共识<br>**<br>**</p>
-<p>这非常酷。我们有一个基本的 Blockchain 接受交易，它允许我们挖掘新的区块。但 Blockchain 的关键在于，它们应该是分布式的。如果它们是分布式的，我们如何确保它们都在一条链？这被称为共识的问题，如果我们想要在我们的网络中有多个节点，我们就必须实现一个共识的算法。</p>
-<p>注册新节点</p>
-<p>在实现共识算法之前，我们需要一种方法让节点知道网络上的相邻节点。我们网络上的每个节点都应该保留网络上其他节点的注册表。因此，我们需要更多的端点 :</p>
-<p>/nodes/register 以 url 的形式接受新的节点列表。<br>/nodes/resolve 来实现我们的共识算法，它可以解决任何冲突——以确保一个节点拥有正确的链。<br>我们需要修改 Blockchain 的构造函数，并提供注册节点的方法：</p>
-<p>…<br>from urllib.parse import urlparse<br>…<br>4.</p>
-<p>5.</p>
-<p>class Blockchain(object):<br>def init(self):<br>…<br>self.nodes = set()<br>…<br>11.</p>
-<p>def register_node(self, address):<br>“””<br>Add a new node to the list of nodes<br>15.</p>
-<p>:param address: Address of node. Eg. ‘<a href="http://192.168.0.5:5000&#39;">http://192.168.0.5:5000&#39;</a><br>:return: None<br>“””<br>19.</p>
-<p>parsed_url = urlparse(address)<br>self.nodes.add(parsed_url.netloc)<br>Amethod for adding neighbouring nodes to our Network</p>
-<p>使用 set() 来保存节点列表。这是确保新节点的添加具有幂等性的廉价方式，这意味着无论我们添加多少次特定节点，它都只会出现一次。</p>
-<p>实现算法的共识</p>
-<p>**<br>**</p>
-<p>如前所述，当一个节点与另一个节点具有不同链时就有了冲突。为了解决这个问题，我们制定一条规则：最长的并且有效的链才是权威的。换句话说，网络上最长的链是事实上的链。利用该算法，我们在网络节点之间达成了一致。</p>
-<p>…<br>import requests<br>3.</p>
-<p>4.</p>
-<p>class Blockchain(object)<br>…<br>7.</p>
-<p>def valid_chain(self, chain):<br>“””<br>Determine if a given blockchain is valid<br>11.</p>
-<p>:param chain: A blockchain<br>:return: True if valid, False if not<br>“””<br>15.</p>
-<p>last_block = chain[0]<br>current_index = 1<br>18.</p>
-<p>while current_index &lt; len(chain):<br>block = chain[current_index]<br>print(f’{last_block}’)<br>print(f’{block}’)<br>print(“\n———–\n”)<br>Check that the hash of the block is correct<br>if block[‘previous_hash’] != self.hash(last_block):<br>return False<br>27.</p>
-<p>Check that the Proof of Work is correct<br>if not self.valid_proof(last_block[‘proof’], block[‘proof’]):<br>return False<br>31.</p>
-<p>last_block = block<br>current_index += 1<br>34.</p>
-<p>return True<br>36.</p>
-<p>def resolve_conflicts(self):<br>“””<br>This is our Consensus Algorithm, it resolves conflicts<br>by replacing our chain with the longest one in the network.<br>41.</p>
-<p>:return: True if our chain was replaced, False if not<br>“””<br>44.</p>
-<p>neighbours = self.nodes<br>new_chain = None<br>47.</p>
-<p>We’re only looking for chains longer than ours<br>max_length = len(self.chain)<br>50.</p>
-<p>Grab and verify the chains from all the nodes in our network<br>for node in neighbours:<br>response = requests.get(f’http://{node}/chain’)<br>54.</p>
-<p>if response.status_code == 200:<br>length = response.json()[‘length’]<br>chain = response.json()[‘chain’]<br>58.</p>
-<p>Check if the length is longer and the chain is valid<br>if length &gt; max_length and self.valid_chain(chain):<br>max_length = length<br>new_chain = chain<br>63.</p>
-<p>Replace our chain if we discovered a new, valid chain longer than ours<br>if new_chain:<br>self.chain = new_chain<br>return True<br>68.</p>
-<p>return False<br>第一个方法 valid_chain() 负责检查链是否有效，通过循环遍历每个区块并验证哈希和证明。</p>
-<p>resolve_conflicts() 是这么一个方法：它遍历我们所有的邻近节点，下载它们的链并使用上面的方法验证它们。如果一个有效的链被发现，它的长度大于我们的，我们就替换掉我们当前所使用的链。</p>
-<p>让我们将两个端点注册到 API 中，一个用于添加相邻节点，另一个用于解决冲突：</p>
-<p>@app.route(‘/nodes/register’, methods=[‘POST’])<br>def register_nodes():<br>values = request.get_json()<br>4.</p>
-<p>nodes = values.get(‘nodes’)<br>if nodes is None:<br>return “Error: Please supply a valid list of nodes”, 400<br>8.</p>
-<p>for node in nodes:<br>blockchain.register_node(node)<br>11.</p>
-<p>response = {<br>‘message’: ‘New nodes have been added’,<br>‘total_nodes’: list(blockchain.nodes),<br>}<br>return jsonify(response), 201<br>17.</p>
-<p>18.</p>
-<p>@app.route(‘/nodes/resolve’, methods=[‘GET’])<br>def consensus():<br>replaced = blockchain.resolve_conflicts()<br>22.</p>
-<p>if replaced:<br>response = {<br>‘message’: ‘Our chain was replaced’,<br>‘new_chain’: blockchain.chain<br>}<br>else:<br>response = {<br>‘message’: ‘Our chain is authoritative’,<br>‘chain’: blockchain.chain<br>}<br>33.</p>
-<p>return jsonify(response), 200<br>此时，你可以使用不同的机器，并在网络上创建不同的节点。或者在同一台机器上使用不同的端口来启动进程。我在我的机器上的另一个端口上启动了另一个节点，并将它注册到我当前的节点上。因此，我有两个节点 : <a target="_blank" rel="noopener" href="http://localhost:5000/">http://localhost:5000</a> 和 <a target="_blank" rel="noopener" href="http://localhost:5001/">http://localhost:5001</a> 。</p>
-<p><img src="/images/2020/11/08/4b09a6a0-aaaa-4bf2-b259-3eaaa74e5e6d.jpg" alt="01e10260a03ef6a55828697b9fe89a82.jpg"><br>Registeringa new Node</p>
-<p>然后我在节点 2 上挖掘了一些新的区块，以确保链更长。之后，我在节点 1 上调用 GET /nodes/resolve ，在节点 1 上的链被共识算法所取代：<br><img src="/images/2020/11/08/52fbd6fe-98ff-4b65-ba57-6c1bd3bafff7.jpg" alt="3583e18b009ea83937cef44f739b98d1.jpg"><br>ConsensusAlgorithm at Work</p>
-<p>去找几个朋友测试一下你的 Blockchain 吧。</p>
-<p>我希望这能激励你去创造一些新的东西。我对加密货币感到兴奋，因为我相信区块链会迅速改变我们对经济、政府和记录保存的看法。</p>
+        <h2 id="让产品设计变得简单的两个方法"><a href="#让产品设计变得简单的两个方法" class="headerlink" title="让产品设计变得简单的两个方法"></a>让产品设计变得简单的两个方法</h2><p>蓝狐  <a href="javascript:void(0);"> 蓝狐笔记 </a></p>
+<p><strong>蓝狐笔记</strong> <img src=""></p>
+<p>微信号 lanhubiji</p>
+<p>功能介绍 通往区块链的新世界。</p>
+<hr>
+<p>__</p>
+<p>收录于话题</p>
+<p>让产品变简单是所有产品经理的梦想。但现实总是很残酷。谁都可以提需求，谁都觉得这个需求对用户很有用。来自用户的反馈，来自市场的反馈，老板的反馈……无止境的需求看不到边际，直到让你精疲力尽，忘记为什么要出发。  </p>
+<p>结果，诞生了一个极其平庸的产品，臃肿而复杂。  </p>
+<p>那么，有什么办法来设计一个简洁的产品？</p>
+<p>Twitter联合创始人Bizstone有两个方法：</p>
+<p> <strong>一、只保留默认选项</strong></p>
+<p> **<br>**</p>
+<p>Biz<br>stone说他知道保持简单很难。但他喜欢简单的东西。因为他会被复杂的产品弄得心情沮丧。于是，他发明了一个同样简单的产品评估方法：在评估产品时像编辑一样思考，什么东西是可以去掉的？选项很多会让人困惑迷失，宁愿删除也不愿意去尝试。</p>
+<p>当产品评审遇到困惑时，他会问产品设计团队：选项这么多，哪一个会设为默认项？当团队给出默认项答案，他的决定就是：这就是我们要的产品。剩余的全部拿掉。他的理由很简单：普通用户有几个人会去折腾这些设置？大家只是想要简单有用的产品，而不是华而不实的花哨的强大得可怕的产品。  </p>
+<p> <strong>二、设计出最基本的单元，剩下的交给用户去创造</strong>  </p>
+<hr>
+<p> ****要想保持简单唯有放手：留给用户足够的空间去创造。正如中国画的留白，这是想象和创造的空间。</p>
+<p>Perl语言的开发者Larry<br>Wall曾经举过一个案例：当初Irvine在创建加州大学时，建筑完成后在空地上种草，不建人行道。一年之后，草坪上的足迹就成为人行道的铺设路线。Larry设计Perl的哲学也是这样，保持简单，给用户有机会去创造。真正简单的产品能够引起用户共鸣。复杂的产品往往是因为没有满足用户的需求而拼命加功能。</p>
+<p>任何一款功能复杂的产品本质上是一款没有自信的产品。</p>
+<p>如果你设计出一款真正简单的产品，就要去思考，产品最基本的单元是什么？哪些是你必须设计的，哪些是可以放手给用户去控制的？只有这样，你才会发现：1)<br>真正的价值在哪里? 2) 哪些是缺失的？当用户去使用的时候，就会留下很多他们的足迹，这些足迹就是产品升级迭代的理由。  </p>
+<p>最后，不要为了简单而简单。有价值的简单才有意义。所以，要设计一款真正有用的简单的产品，需要去倾听和观察用户：到底他们想要什么？</p>
+<p>找到用户真正想要的，然后用最最简单的产品形态去匹配它。当在产品设计的时候，可能你的产品跟大家的预期不同。但没有关系，要相信自己，相信自己设计出来的产品，相信简单的力量，相信倾听的价值。  </p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 风险警示：蓝狐笔记所有文章都不能作为投资建议或推荐，投资有风险，投资应该考虑个人风险承受能力，建议对项目进行深入考察，慎重做好自己的投资决策。加入蓝狐笔记的知识星球：https://t.zsxq.com/Iq3VzfM 欢迎加入蓝狐笔记群微信：donnell008 </span>
