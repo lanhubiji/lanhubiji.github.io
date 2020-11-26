@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Lisk:用JavaScript也能创建区块链应用 | 蓝狐笔记 lanhubiji</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Lisk:用JavaScript也能创建区块链应用 | 蓝狐笔记 lanhubiji">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="原创 蓝狐笔记 蓝狐笔记 蓝狐笔记  微信号 lanhubiji 功能介绍 通往区块链的新世界。  ** 收录于话题 金融科技，尤其是普惠金融企业已是红海中的红海。根据网贷之家统计，截止到2016年10月底，正常运营的网贷平台依然有2154家。经过了P2P的丑闻，互联网金融企业依然有无数选手顽强生存和发展，据公开数据，目前真正盈利的网贷平台不超过1%。 从流量上来看，除了BAT、京东等超级流量大户">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2000多家网贷平台，都是在拼什么呢？">
+<meta property="og:url" content="http://lanhubiji.com/22189/index.html">
+<meta property="og:site_name" content="蓝狐笔记 lanhubiji">
+<meta property="og:description" content="原创 蓝狐笔记 蓝狐笔记 蓝狐笔记  微信号 lanhubiji 功能介绍 通往区块链的新世界。  ** 收录于话题 金融科技，尤其是普惠金融企业已是红海中的红海。根据网贷之家统计，截止到2016年10月底，正常运营的网贷平台依然有2154家。经过了P2P的丑闻，互联网金融企业依然有无数选手顽强生存和发展，据公开数据，目前真正盈利的网贷平台不超过1%。 从流量上来看，除了BAT、京东等超级流量大户">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://lanhubiji.com/22189/images/20161126_111810_1_2.jpeg">
+<meta property="og:image" content="http://lanhubiji.com/22189/images/20161126_111810_1_5.png">
+<meta property="article:published_time" content="2020-11-26T07:42:52.000Z">
+<meta property="article:modified_time" content="2020-11-26T08:19:45.899Z">
+<meta property="article:author" content="蓝狐笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lanhubiji.com/22189/images/20161126_111810_1_2.jpeg">
+
+
+<link rel="icon" href="/img/avatar.png">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.png" />
+</a>
+<div class="author">
+    <span>蓝狐笔记</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/lanhubiji" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="twitter" href="lanhu_IoT" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-twitter"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="https://weibo.com/huangliangxin" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:lanhubiji@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active" data-rel="全部文章">全部文章<small>(145)</small></div></li>
+    
+        
+            
+            <li><div data-rel="博客"><i class="fold iconfont icon-right"></i>博客<small>(131)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="博客<--->比特币">比特币<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="博客<--->以太坊">以太坊<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="博客<--->其它">其它<small>(112)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="论文">论文<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="指标">指标<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="145">
+<input type="hidden" id="yelog_site_word_count" value="325.1k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" />
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>以太坊(Ethereum)</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>加密货币(Cryptocurrency)</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>区块链(Blockchain)</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>区块链游戏(Blockchain Gaming)</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>去中心化交易所(DEX)</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>智能合约(Smart Contract)</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>比特币(Bitcoin)</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>跨链(cross-chain)</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>非同质代币(ERC-721)</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="全部文章 博客 其它 "
+           href="/5763/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Zenprotocol:金融资产流动引擎">Zenprotocol:金融资产流动引擎</span>
+            <span class="post-date" title="2020-11-26 15:42:53">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/11344/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ofo的单车共享平台：自行车产业的终极模式？">ofo的单车共享平台：自行车产业的终极模式？</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/22189/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2000多家网贷平台，都是在拼什么呢？">2000多家网贷平台，都是在拼什么呢？</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/9608/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="互联网金融2.0：数据生态与战略制高点">互联网金融2.0：数据生态与战略制高点</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/46515/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="禅与产品">禅与产品</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/36395/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="产品MVP迭代陷阱：新产品死亡循环">产品MVP迭代陷阱：新产品死亡循环</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/29413/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="最近有个概念叫做“下半场”">最近有个概念叫做“下半场”</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/58014/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="互联网化的碳汇交易：个体力量与可持续的环保">互联网化的碳汇交易：个体力量与可持续的环保</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/44977/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人工智能范式转移与传统职业的消失">人工智能范式转移与传统职业的消失</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/35218/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么交互设计师注定是一个走向没落的职业？">为什么交互设计师注定是一个走向没落的职业？</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/14701/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="单车共享经济是伪命题? ofo正把它变成现实">单车共享经济是伪命题? ofo正把它变成现实</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/23105/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="容忍瑕疵与必须正确">容忍瑕疵与必须正确</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/61188/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="AI时代初创企业还有机会吗">AI时代初创企业还有机会吗</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/53297/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="自我与无我">自我与无我</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/51511/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="用户需求与上帝视角">用户需求与上帝视角</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/30105/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="天下无拐：互联网公司凭什么能做到?">天下无拐：互联网公司凭什么能做到?</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/27833/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="VR家居：有内容才有未来">VR家居：有内容才有未来</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/52123/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="从共享单车出海看中国经济升级的最佳引擎">从共享单车出海看中国经济升级的最佳引擎</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/57882/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="用户参与度与10亿美金估值">用户参与度与10亿美金估值</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/34603/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="婚恋市场新变局:有缘网逆袭成为领头羊">婚恋市场新变局:有缘网逆袭成为领头羊</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/514/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="产品口碑的最重要指标：净推荐值">产品口碑的最重要指标：净推荐值</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/13422/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="大家的时尚色，华为都知道">大家的时尚色，华为都知道</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/60426/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="下半场的突围：新物种的机会">下半场的突围：新物种的机会</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/62113/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人工智能与穿搭：让每个人都有自己专属的造型师">人工智能与穿搭：让每个人都有自己专属的造型师</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/213/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="小鱼在家的分身鱼：来看看人工智能场景落地的姿势">小鱼在家的分身鱼：来看看人工智能场景落地的姿势</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/46968/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么区块链的春天不会这么快到来？">为什么区块链的春天不会这么快到来？</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/25934/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="没人是艺术家，也没人不是艺术家">没人是艺术家，也没人不是艺术家</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/52667/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人工智能时代：什么时候才能爆发？">人工智能时代：什么时候才能爆发？</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/24429/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人工智能大趋势下的选择">人工智能大趋势下的选择</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/10068/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="战百度，擒头条？微信并非万能">战百度，擒头条？微信并非万能</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/47704/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ICO：高收益与高风险，玩加密代币黄金时代到来了吗">ICO：高收益与高风险，玩加密代币黄金时代到来了吗</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/22884/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="靠谱的区块链ICO一般长什么样？">靠谱的区块链ICO一般长什么样？</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/19878/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ICO回报率超过10倍的项目都有哪些？">ICO回报率超过10倍的项目都有哪些？</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/45784/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ICO诈骗术：假冒网站伪装成为ICO项目网站骗取ETH">ICO诈骗术：假冒网站伪装成为ICO项目网站骗取ETH</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/62376/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数字资产平台格局：以太坊生态初步形成">数字资产平台格局：以太坊生态初步形成</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/14748/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链投资的底层逻辑：是否看好它对生产关系的变革产生真正影响">区块链投资的底层逻辑：是否看好它对生产关系的变革产生真正影响</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/63681/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="最快19分钟的极速赔是怎么引爆互联网行业的？">最快19分钟的极速赔是怎么引爆互联网行业的？</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/64528/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="保险行业的区块链应用ICO项目">保险行业的区块链应用ICO项目</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/60450/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ICO到底是什么？(一)">ICO到底是什么？(一)</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/31581/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ofo和摩拜都在做的NB-IoT智能锁，究竟是什么？">ofo和摩拜都在做的NB-IoT智能锁，究竟是什么？</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/49699/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ICO到底是什么（二）">ICO到底是什么（二）</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/55105/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="关于ICO市场乱象：有人在圈钱，但不是所有人">关于ICO市场乱象：有人在圈钱，但不是所有人</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/31748/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ICO乱象一二">ICO乱象一二</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/52826/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ICO到底是什么（三）">ICO到底是什么（三）</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/41115/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ICO到底是什么（四）">ICO到底是什么（四）</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/19714/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="不靠谱的区块链ICO项目的五个迹象">不靠谱的区块链ICO项目的五个迹象</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/6651/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Elix:借款方也能获得奖励的区块链借贷平台">Elix:借款方也能获得奖励的区块链借贷平台</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/15006/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="IPFS：基于区块链的去中心化存储网络">IPFS：基于区块链的去中心化存储网络</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/5718/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链时代投资范式的转移：协议层价值高于应用层">区块链时代投资范式的转移：协议层价值高于应用层</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/12580/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链协议层的竞争：它代表了最佳的创业和投资机会">区块链协议层的竞争：它代表了最佳的创业和投资机会</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/25989/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="BCH的狂飙：载入史册的经典之战与区块链的西部世界">BCH的狂飙：载入史册的经典之战与区块链的西部世界</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/35367/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="一号护工的崛起：抓住大健康消费升级的趋势">一号护工的崛起：抓住大健康消费升级的趋势</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/30769/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Cybermiles：全球首家链接现实商业场景的区块链平台">Cybermiles：全球首家链接现实商业场景的区块链平台</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/7059/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Lisk:用JavaScript也能创建区块链应用">Lisk:用JavaScript也能创建区块链应用</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/19056/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Vibehub：基于区块链的虚拟现实交易市场">Vibehub：基于区块链的虚拟现实交易市场</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/3053/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Request:基于区块链的全球化支付网络">Request:基于区块链的全球化支付网络</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/19284/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Mobius:打通区块链生态和现实世界数据的通用协议">Mobius:打通区块链生态和现实世界数据的通用协议</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/52902/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="互联网的旧世界终将过去：区块链的新王终将加冕">互联网的旧世界终将过去：区块链的新王终将加冕</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/57894/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Ripio Credit Network：基于区块链智能合约的全球信贷网络">Ripio Credit Network：基于区块链智能合约的全球信贷网络</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/28656/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="0X：基于以太坊区块链的去中心化交易所协议">0X：基于以太坊区块链的去中心化交易所协议</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/37372/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="去中心化交易所模式简析：路途还长">去中心化交易所模式简析：路途还长</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/38902/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Neblio：下一代商用区块链解决方案">Neblio：下一代商用区块链解决方案</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/48895/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="代币估值：流动性因素不可忽视">代币估值：流动性因素不可忽视</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/8462/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="协议层的竞争与代币格局变化">协议层的竞争与代币格局变化</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/974/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链世界中的IOTA：它是什么样的存在？">区块链世界中的IOTA：它是什么样的存在？</span>
+            <span class="post-date" title="2020-11-26 15:42:52">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/759/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="靠什么打动投资人？">靠什么打动投资人？</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="让产品设计变得简单的两个方法">让产品设计变得简单的两个方法</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/55685/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="真正七星级的产品">真正七星级的产品</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/43268/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="水床垫的故事：你的产品真的是用户需要的吗？">水床垫的故事：你的产品真的是用户需要的吗？</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/44080/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="传统行业互联网化改造：只有通用化才能成就独角兽">传统行业互联网化改造：只有通用化才能成就独角兽</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/32787/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="流量红利消失:拼内功和思考力时代">流量红利消失:拼内功和思考力时代</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/42747/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么互联网时代小而美也有机会？">为什么互联网时代小而美也有机会？</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/8868/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="成就超级独角兽：没异见无未来">成就超级独角兽：没异见无未来</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/55765/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="康威定律、产品形态与早期投资">康威定律、产品形态与早期投资</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/39243/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="关于创业公司CEO最重要的技能">关于创业公司CEO最重要的技能</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/15172/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么产品型CEO比销售型CEO更适合创业公司？">为什么产品型CEO比销售型CEO更适合创业公司？</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/6357/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="创业的想象力">创业的想象力</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/32351/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="所有大牛产品早期的三个共同点">所有大牛产品早期的三个共同点</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/35015/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="用户生命周期价值、获客成本与创业的坑">用户生命周期价值、获客成本与创业的坑</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/10818/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="向失败学习">向失败学习</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/56925/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="产品初体验与转化率">产品初体验与转化率</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/42654/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反向思考：创业思考的另外方式">反向思考：创业思考的另外方式</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/6633/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="反向思考：相信相信的力量">反向思考：相信相信的力量</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/1485/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="有野心创业者和非野心创业者的区别">有野心创业者和非野心创业者的区别</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/33745/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Pokemon Go：AR的春天">Pokemon Go：AR的春天</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/57117/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="假如你是2009年开心网CEO，你会做得更好？">假如你是2009年开心网CEO，你会做得更好？</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/35857/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="增长陷阱：快速增长背后的假象">增长陷阱：快速增长背后的假象</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/25813/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="公司的消失：自然合伙人时代的到来">公司的消失：自然合伙人时代的到来</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/1904/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="创业的本质：save time与kill time">创业的本质：save time与kill time</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/38780/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="技术型创业者：自我突破的困境">技术型创业者：自我突破的困境</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/20910/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="只有一种创业才是真创业">只有一种创业才是真创业</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/37047/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="所有的用户增长都是为了那个magic moment">所有的用户增长都是为了那个magic moment</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/10606/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="互联网金融的机会">互联网金融的机会</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/10425/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="产品经理的三板斧">产品经理的三板斧</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/61946/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么早期创业轻易不要进入蓝海">为什么早期创业轻易不要进入蓝海</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/61936/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="产品的摩擦力：简洁设计背后的坑">产品的摩擦力：简洁设计背后的坑</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/8315/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="也来说说：打败微信的将会是一款什么样的产品？">也来说说：打败微信的将会是一款什么样的产品？</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/9738/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么说逻辑太严谨的人投不出好的公司？">为什么说逻辑太严谨的人投不出好的公司？</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/13850/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="互联网长尾与微信小程序">互联网长尾与微信小程序</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/13218/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="互联网新常态与未来驱动力">互联网新常态与未来驱动力</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/30888/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="社区型公司：分布式与中心化并存的社区">社区型公司：分布式与中心化并存的社区</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/59752/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链社交网络会颠覆现有社交网络吗?">区块链社交网络会颠覆现有社交网络吗?</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/39151/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="智能手机的消失：计算平台无处不在的时代">智能手机的消失：计算平台无处不在的时代</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/37101/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="产品价值观与竞争优势">产品价值观与竞争优势</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/10865/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人工智能与场景创新：获客新模式探索">人工智能与场景创新：获客新模式探索</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/59644/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="人工智能崛起前的忍耐：百度和Alphabet的新常态">人工智能崛起前的忍耐：百度和Alphabet的新常态</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/679/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="简单理解区块链数据库">简单理解区块链数据库</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/35146/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="产品的错觉：更好的产品一定会更成功？">产品的错觉：更好的产品一定会更成功？</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/21233/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链+：“无中介”驱动的世界">区块链+：“无中介”驱动的世界</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/58712/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Raiden雷电网络:会成为全球区块链支付的基础设施吗">Raiden雷电网络:会成为全球区块链支付的基础设施吗</span>
+            <span class="post-date" title="2020-11-26 15:42:51">2020/11/26</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2020-11-25 23:17:59">2020/11/25</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2020-11-25 23:12:55">2020/11/25</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/55685/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="真正七星级的产品">真正七星级的产品</span>
+            <span class="post-date" title="2020-11-21 05:46:43">2020/11/21</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/759/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="靠什么打动投资人？">靠什么打动投资人？</span>
+            <span class="post-date" title="2020-11-21 05:45:18">2020/11/21</span>
+        </a>
+        
+        <a  class="全部文章 "
+           href="/0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2020-11-21 05:33:09">2020/11/21</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/63367/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="为什么赢者恒赢？">为什么赢者恒赢？</span>
+            <span class="post-date" title="2020-11-18 20:20:08">2020/11/18</span>
+        </a>
+        
+        <a  class="全部文章 博客 其它 "
+           href="/26788/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="EOS 的第三条道路">EOS 的第三条道路</span>
+            <span class="post-date" title="2020-11-14 19:15:11">2020/11/14</span>
+        </a>
+        
+        <a  class="全部文章 博客 以太坊 "
+           href="/16100/"
+           data-tag="以太坊(Ethereum)"
+           data-author="" >
+            <span class="post-title" title="V 神眼中区块链的治理机制（一）">V 神眼中区块链的治理机制（一）</span>
+            <span class="post-date" title="2020-11-11 16:43:53">2020/11/11</span>
+        </a>
+        
+        <a  class="全部文章 指标 "
+           href="/12103/"
+           data-tag="比特币(Bitcoin)"
+           data-author="" >
+            <span class="post-title" title="renBTC日交易量">renBTC日交易量</span>
+            <span class="post-date" title="2020-11-10 21:16:38">2020/11/10</span>
+        </a>
+        
+        <a  class="全部文章 指标 "
+           href="/11387/"
+           data-tag="以太坊(Ethereum)"
+           data-author="" >
+            <span class="post-title" title="以太坊交易费用(Gas Prices)">以太坊交易费用(Gas Prices)</span>
+            <span class="post-date" title="2020-11-10 19:05:17">2020/11/10</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/64312/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="区块链与分布式账本技术（上2）">区块链与分布式账本技术（上2）</span>
+            <span class="post-date" title="2020-11-10 17:00:13">2020/11/10</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/42174/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="区块链与分布式账本技术（上）">区块链与分布式账本技术（上）</span>
+            <span class="post-date" title="2020-11-10 06:35:34">2020/11/10</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/1800/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="Lucidity：区块链化数字广告服务">Lucidity：区块链化数字广告服务</span>
+            <span class="post-date" title="2020-11-09 17:20:46">2020/11/09</span>
+        </a>
+        
+        <a  class="全部文章 论文 "
+           href="/164cc6b9/"
+           data-tag="去中心化交易所(DEX)"
+           data-author="" >
+            <span class="post-title" title="去中心化交易所DEX中的高频交易">去中心化交易所DEX中的高频交易</span>
+            <span class="post-date" title="2020-11-08 07:23:12">2020/11/08</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/d6f39c19/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="学习区块链的最好方法是构建一个（下）">学习区块链的最好方法是构建一个（下）</span>
+            <span class="post-date" title="2020-11-08 06:03:17">2020/11/08</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/6e4ffb7c/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="学习区块链的最好方法是构建一个（上）">学习区块链的最好方法是构建一个（上）</span>
+            <span class="post-date" title="2020-11-08 05:59:18">2020/11/08</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/1bd7c900/"
+           data-tag="区块链游戏(Blockchain Gaming)"
+           data-author="" >
+            <span class="post-title" title="CashBet: 区块链化竞猜游戏的机会">CashBet: 区块链化竞猜游戏的机会</span>
+            <span class="post-date" title="2020-11-08 05:49:32">2020/11/08</span>
+        </a>
+        
+        <a  class="全部文章 指标 "
+           href="/d0dbceef/"
+           data-tag="比特币(Bitcoin)"
+           data-author="" >
+            <span class="post-title" title="[指标]以太坊链上锚定的比特币BTC代币总量">[指标]以太坊链上锚定的比特币BTC代币总量</span>
+            <span class="post-date" title="2020-11-07 05:03:10">2020/11/07</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/aaebf6b4/"
+           data-tag="以太坊(Ethereum)"
+           data-author="" >
+            <span class="post-title" title="V 神：验证者如何参与到 Casper 系统">V 神：验证者如何参与到 Casper 系统</span>
+            <span class="post-date" title="2020-11-05 20:43:11">2020/11/05</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/489bedd1/"
+           data-tag="加密货币(Cryptocurrency)"
+           data-author="" >
+            <span class="post-title" title="加密货币的奇点">加密货币的奇点</span>
+            <span class="post-date" title="2020-11-05 20:38:45">2020/11/05</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/5df9ea07/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="AWARE 先知：打造区块链项目搜索和社群平台">AWARE 先知：打造区块链项目搜索和社群平台</span>
+            <span class="post-date" title="2020-11-05 20:16:21">2020/11/05</span>
+        </a>
+        
+        <a  class="全部文章 博客 比特币 "
+           href="/ff513405/"
+           data-tag="比特币(Bitcoin)"
+           data-author="" >
+            <span class="post-title" title="在加密世界的核冬天存活下来">在加密世界的核冬天存活下来</span>
+            <span class="post-date" title="2020-11-05 20:06:06">2020/11/05</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/bca4891/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="区块链共识算法简介">区块链共识算法简介</span>
+            <span class="post-date" title="2020-11-05 19:59:24">2020/11/05</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/cb4ae6f0/"
+           data-tag="跨链(cross-chain)"
+           data-author="" >
+            <span class="post-title" title="跨链协议：扩展区块链行业应用的生态边界">跨链协议：扩展区块链行业应用的生态边界</span>
+            <span class="post-date" title="2020-11-05 19:53:21">2020/11/05</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/eac2a859/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="区块链开发者的机遇">区块链开发者的机遇</span>
+            <span class="post-date" title="2020-11-05 18:29:03">2020/11/05</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/1d910d4f/"
+           data-tag="非同质代币(ERC-721)"
+           data-author="" >
+            <span class="post-title" title="什么是非同质代币？">什么是非同质代币？</span>
+            <span class="post-date" title="2020-11-05 18:23:14">2020/11/05</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/ee305ae4/"
+           data-tag="比特币(Bitcoin)"
+           data-author="" >
+            <span class="post-title" title="最优投资组合中应该有比特币一席之地吗？">最优投资组合中应该有比特币一席之地吗？</span>
+            <span class="post-date" title="2020-11-05 14:08:24">2020/11/05</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/f73081ed/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="如何理解区块链的产品、平台和协议？">如何理解区块链的产品、平台和协议？</span>
+            <span class="post-date" title="2020-11-05 14:03:21">2020/11/05</span>
+        </a>
+        
+        <a  class="全部文章 论文 "
+           href="/bcb04624/"
+           data-tag="智能合约(Smart Contract)"
+           data-author="" >
+            <span class="post-title" title="[论文]智能合约间的跨链调用">[论文]智能合约间的跨链调用</span>
+            <span class="post-date" title="2020-11-05 07:32:33">2020/11/05</span>
+        </a>
+        
+        <a  class="全部文章 论文 "
+           href="/30d9fb3/"
+           data-tag="智能合约(Smart Contract)"
+           data-author="" >
+            <span class="post-title" title="走向跨区块链的智能合约">走向跨区块链的智能合约</span>
+            <span class="post-date" title="2020-11-04 22:07:05">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/385e337/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="Neo的Flamingo">Neo的Flamingo</span>
+            <span class="post-date" title="2020-11-04 21:16:04">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 博客 "
+           href="/99023d6c/"
+           data-tag="区块链(Blockchain)"
+           data-author="" >
+            <span class="post-title" title="Uniswap的反击与DEX格局">Uniswap的反击与DEX格局</span>
+            <span class="post-date" title="2020-11-04 20:49:36">2020/11/04</span>
+        </a>
+        
+        <a  class="全部文章 指标 "
+           href="/4e382a27/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Rarible月销量中一级销量二级销量占比">Rarible月销量中一级销量二级销量占比</span>
+            <span class="post-date" title="2020-11-03 10:09:43">2020/11/03</span>
+        </a>
+        
+        <a  class="全部文章 工具 "
+           href="/16f0647b/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="工具2">工具2</span>
+            <span class="post-date" title="2020-11-01 07:34:21">2020/11/01</span>
+        </a>
+        
+        <a  class="全部文章 指标 "
+           href="/fb7185bf/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="DeFi用户数">DeFi用户数</span>
+            <span class="post-date" title="2020-10-29 14:13:26">2020/10/29</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-20170928_205100_1" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Lisk:用JavaScript也能创建区块链应用</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="博客">博客</a> > 
+            
+            <a  data-rel="博客&lt;---&gt;其它">其它</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2020-11-26 16:35:11'>2020-11-26 15:42</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E5%88%B0%E7%9C%8B%E4%B8%80%E7%9C%8B-like-comment-primary-title"><span class="toc-text">发送到看一看 {.like_comment_primary_title}</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原创 蓝狐笔记 <a href="javascript:void(0);">蓝狐笔记</a></p>
+<p><strong>蓝狐笔记</strong> <img src=""></p>
+<p>微信号 lanhubiji</p>
+<p>功能介绍 通往区块链的新世界。</p>
+<hr>
+<p>**</p>
+<p>收录于话题</p>
+<p><img src="images/20170928_205100_1_2.png"></p>
+<p>（桌上等紫罗兰花篮，梵高）</p>
+<p>\</p>
+<p>Lisk于2016年4月6日上线交易所，其代币LSK当时价格是2.04美元，并在4天后飙升到了6.91美元，好景不长，一个月后的5月25日，价格降至0.278525美元，距离最高价格跌了24倍多。并在之后长达一年的冰冻期中，价格主要在0.10到0.25美元之间波动。但从今年4月份开始到现在涨至2017年9月25日的6.15美元左右，凸显强势回升，即使是近期整个市场低迷，也保持相对稳定高位，整体市值攀升到了数字代币市场第14位，目前（2017.9.25）估值超6.9亿美元，超过Qutum、EOS、Tenx等知名项目。</p>
+<p>\</p>
+<p>Lisk是做什么的？它有哪些特别之处？</p>
+<p>\</p>
+<p><strong>一、简介</strong></p>
+<p>**<br>**</p>
+<p>Lisk是去中心化的区块链平台，它致力于降低区块链应用开发门槛，开发者可以用JavaScript来开发区块链应用。Lisk一些数据及资料：</p>
+<p>\</p>
+<p>主网络运行时间：2016年5月24日</p>
+<p>\</p>
+<p>区块时间：10秒</p>
+<p>\</p>
+<p>交易最终确认：6-10次</p>
+<p>\</p>
+<p>代币供应：初始1亿LSK。此外，还有打造区块的奖励，目前每个区块奖励5个LSK，之后每年减少1个LSK，直到1个LSK。目前（2017.9.25）流通的LSK超过112，713，560个。LSK可以在各种侧链应用间通用，支付各种费用，以驱动交易等。从一个账户发送LSK到另外一个账户花费10秒钟，在1-2分钟后交易不可逆。</p>
+<p>\</p>
+<p>共识算法：DPOS，允许权益人投票来解决任何共识问题。几乎所有的网络变量都可以通过这个系统来调整，包括区块大小，费用，区块间隔等。任何时候单一主体无法改变系统，需要社区达成共识才能作出改变。</p>
+<p>\</p>
+<p>项目启动获得的资金：14000个比特币（当时估值500万美元），按照今天比特币估值，团队将会有非常丰厚的资金保证在未来几年内的开发和运转费用。</p>
+<p>\</p>
+<p><strong>二、Lisk想解决什么问题</strong></p>
+<p>\</p>
+<p>Lisk主要解决开发者创建区块链应用的门槛问题，从目前看开发区块链应用门槛较高，而Lisk主要优势在于它的SDK基于JavaScript，它提供的框架可降低区块链应用的开发门槛。</p>
+<p>\</p>
+<p>另外，Lisk用侧链支持区块链应用，可以解决区块链臃肿问题，一般的区块链把所有的交易和应用都放在一条区块链上，易臃肿。比如Bancor、Status等ICO期间以太坊存在明显堵塞问题。与此同时，侧链与主链隔离，更具安全性。某一侧链发生问题，不会影响其他侧链或Lisk主链。</p>
+<p>\</p>
+<p><strong>三、Lisk到底是什么</strong></p>
+<p>**<br>**</p>
+<p><strong>1.同样是区块链应用平台，Lisk与以太坊有根本的不同</strong></p>
+<p>**<br>**</p>
+<p>大多数数字代币投资人或区块链行业的人都熟悉智能合约的概念。以太坊的理念是：智能合约将会统治世界，甚至于所有的应用会运用到某种形式的智能合约。这是以太坊系统的发展方向和基石。</p>
+<p>\</p>
+<p>而Lisk重点并不在于智能合约，当然智能合约也有可能是它未来系统的一部分，这在它的路线图中有提及。它试图通过一体化虚拟机与智能合约系统做接口，而它本身并不是智能合约系统，它是自定义的区块链系统，这是Lisk基石和理念。</p>
+<p>\</p>
+<p>它通过创建简单的用户体验和平台，便于自定义的区块链执行，可以让个人、小企业甚至大公司都可使用。这是与以太坊不同的方向。Lisk会与以太坊走完全不同的道路。</p>
+<p>\</p>
+<p><strong>2.侧链</strong></p>
+<p>**<br>**</p>
+<p>2016年6月，The<br>DAO遭受攻击，价值6000万美元的代币被盗，这件事让大家警醒，不仅仅是智能合约，包括Solidity编程语言本身也可能有问题。The<br>DAO事件导致以太坊硬分叉。类似的事件，在Lisk身上不会发生。以太坊发展的是全功能和图灵完备的系统，允许开发者通过它自定义的solidity编程语言来编写智能合约。而Lisk采用的是独立的侧链技术，所有区块链应用都跑在独立的侧链上。虽然这些侧链跟主链有联系，但对主链不会产生影响。每个都是独立的区块链，有自己的共识系统、区块代表及数据库。这是以太坊和Lisk重要不同点。</p>
+<p>\</p>
+<p>Lisk上跑的每个独立应用，都有自己的侧链，自我负责。侧链上发生任何问题，应用开发者自己承担。比如侧链非法贩毒等，这些违法行为只跟侧链的应用开发者相关。以太坊等智能合约和服务都是跑在主区块链上，这极大增加了风险。类似于The<br>DAO这样的事件，可能是智能合约的问题，也可能有Solidity语言自身的问题。此外，运行以太坊网络的节点在出现问题时也会有责任，例如如有人创建一个非法或恶意的智能合约，所有节点都会执行该合约。这可能产生法律责任，因为相关节点都参与了这个网络智能合约的执行。</p>
+<p>\</p>
+<p>LiskApp<br>SDK是部署侧链和在上面开发区块链应用的基础框架。用JavaScript编写。开发者可以开发属于自己的区块链社交网络、即时通讯、游戏、金融应用、预测市场、交易所、存储平台、合约执行平台、分享经济、在线商店、IoT应用等，这些应用和平台都是去中心化的，无须处理复杂的共识协议或P2P网络算法等。</p>
+<p>\</p>
+<p>LiskApp<br>SDK可以让开发者在Lisk上部署侧链。侧链是完全自定义的区块链，不用担心被主链或其他侧链污染。所有的规格、参数和交易类型都可以自定义。</p>
+<p>为了防止对区块链对垃圾攻击，须用代币做价值交换，在区块链上存储任何数据都要付出代币，也就是交易费用。在Lisk侧链，你要么用LSK代币（主链的代币），要么完全拥有自己的自定义代币。不过开发者在侧链中使用主链LSK代币时，会有限制：不同侧链间无法简单转移代币。侧链是完全独立的新的区块链。就像比特币不能发送到莱特币网络，侧链代币也不能随意转移。LSK的转账仅限于侧链在主链的账户，相同的LSK代币会复制到侧链。万一侧链发生问题，所有LSK代币仍然是安全的，能轻松恢复。当你开发一个去中介信任的应用，如开发者不想要LSK代币，也可在侧链上发行自己的独立代币。通过在区块链应用中执行小型交易系统，可实现自定义代币与LSK的兑换。</p>
+<p>\</p>
+<p>万一Lisk侧链发现了bug，出现必须硬分叉的情况，那么，只有侧链需要硬分叉，主链则保留完整，不受任何影响，也不用回滚。</p>
+<p>\</p>
+<p>现在有各种链，包括公链、私链和联盟链。Lisk上可以创建任何开发者需要的链，不管是公链、私链还是联盟链。最终来说侧链是去中心化的区块链应用数据库，可发行价值代币，是一个去中心化的网络。</p>
+<p>\</p>
+<p><strong>3.Lisk区块链应用四个基本部分</strong></p>
+<p>**<br>**</p>
+<p>JavaScript可以让成千上万的程序员创建自定义的区块链应用，而无需学习新的语言。Lisk不是以太坊的分叉，Lisk代码是从Crypti项目发展出来的，两位创始人之前在Crypti合作已经合作了18个月。</p>
+<p>\</p>
+<p>从用户的角度，最感兴趣的是区块链应用平台。Lisk App<br>SDK不仅允许侧链的部署，它也提供各种必需工具用于发展区块链应用。区块链应用不仅是在去中心化和无须中介信任的脚本，它还有如下四个基本部分：</p>
+<p>\</p>
+<ul>
+<li><p>  共识算法（DPoS）</p>
+</li>
+<li><p>  侧链（不可逆的数据库）</p>
+</li>
+<li><p>  后端（应用逻辑）</p>
+</li>
+<li><p>前端（应用 用户接口）</p>
+<p>  \</p>
+</li>
+</ul>
+<p>Lisk区块链应用有自己的共识算法（默认DPoS），区块链，自定义代币，后端及前端。Lisk采用了比特股的DPoS共识机制。每个LSK的持有人都可为主链代表投票，以确保网络安全运转。最多有101个激活的主链代表，他们获得最多票数，只有他们可以获得生产区块的奖励。成为打造区块代表能够获得财务上的回报。区块链应用也可利用LSK代币参与到现有的Lisk经济体系中来。Lisk<br>APP SDK 让开发者不仅开发应用的后端，也可以开发前端。</p>
+<p>\</p>
+<p><strong>4.区块链服务平台</strong></p>
+<p>**<br>**</p>
+<p>区块链服务是区块链应用的子类。它允许开发者做一些具体的单一目标的应用。比如：</p>
+<p>\</p>
+<ul>
+<li><p>  身份服务（比如统一身份登录进入各种网站，根据需求可加密个人信息）</p>
+</li>
+<li><p>  去中心化的托管服务（在去中心化的加密云中存储图像或文件）</p>
+</li>
+<li><p>  智能合约执行服务（比如计算随机数，不被操控）</p>
+</li>
+<li><p>预言服务（获得产品等意见或获得现实生活事件等结果）</p>
+<p>  \</p>
+</li>
+</ul>
+<p>Lisk区块链最伟大的地方在于Lisk区块链服务可以插入Lisk主链和生态系统。它们全都运行在自己的侧链上。一旦一个服务存在，其他区块链应用开发者就可利用它。比如，如果你想开发一个社交网络，并想存储用户图片，你可以插入区块链服务，或者你也可以创建桥接第三方去中心化托管服务，例如StorJ的服务。</p>
+<p>\</p>
+<p>随着时间流逝，Lisk区块链应用会变得越来越复杂，功能越来越丰富，并形成App<br>生态系统。就像大脑一样，神经连接越来越多，能力越来越强。所有这些区块链服务可以融入Lisk生态中，这对提升LSK价值有利。与此同时，一旦某些区块链服务失败，只是自己失败而已，不会影响其他。</p>
+<p>\</p>
+<p><strong>5.开源</strong></p>
+<p>**<br>**</p>
+<p>Lisk还有一个方面是开源特性。虽然有方法可以隐藏JavaScript<br>代码，但大多项目并不会做出这个选择，开源才能获得信任。任何开发者把一个酷的功能整合进自己的区块链应用或服务，其他人可以拷贝、增强和整合到自己的区块链应用或服务中。</p>
+<p>\</p>
+<p>开源具有的优势：</p>
+<p>\</p>
+<ul>
+<li><p>一开始Lisk没有执行Solidity智能合约的字典，但把EVM整合到任何Lisk侧链是可能的。如果未来有人去做，其他人都可利用源码，要么在侧链执行智能合约，要么提供智能合约服务。开发者无需在插入以太坊网络。</p>
+<p>  \</p>
+</li>
+<li><p>在Lisk侧链可能需要一些时间才能有POW的共识算法，但一旦开发者开发了一个，其他能即可复用。</p>
+<p>  \</p>
+</li>
+<li><p>如果一个项目因为政治或财务原因失败，其他人可以复用代码并重新部署区块链，甚至可以通过编写侧链迁移把原有用户带入新的侧链。</p>
+<p>  \</p>
+</li>
+<li><p>  去中心化应用商店</p>
+</li>
+</ul>
+<p>苹果的APP store和谷歌的Play<br>store都是中心化的解决方案。Lisk还有去中心化应用目录，在客户端上，每个人都可以进入。所有基于Lisk平台的区块链应用和服务必须在主链注册，通过这种方式，主链和侧链建立了连接。应用目录可以找到所有区块链应用和服务。注册时开发者可以设置唯一的区块链应用名称、描述、类别、代币、标签及下载链接。Lisk可以提供可替代的去中心化应用商店。</p>
+<p>\</p>
+<p><strong>7.生产区块代表市场</strong></p>
+<p>**<br>**</p>
+<p>Lisk生产区块代表市场连接了区块链应用开发者和侧链区块代表。这很有必要，每个侧链都是独立的区块链，需要自己的一系列节点来确保它的安全运行。如果区块链应用开发者不使用默认的共识算法（POS、POW等），那只能自己搞定侧链矿工等，有时候可能是更好的选择。但如果区块链应用开发者使用默认的共识算法（DPoS），他将能从矿工代表市场中租用代表。这个代表租用市场只在Dpos的共识机制下有效。一些区块链应用可能会提供一些功能，这些功能在某些地区合法某些地区不合法。创业公司对此非常看重，希望保证100%的合法，这意味着侧链需要由合法管辖区的节点安全运行，这些地区区块链应用功能是合法的。节点所在地也是侧链代表市场的又一个属性。</p>
+<p>\</p>
+<p><strong>8.Lisk不是什么</strong></p>
+<p>**<br>**</p>
+<p>以上的解释可以看出，lisk不是智能合约平台，不是在虚拟机上执行Solidity合约。Lisk区块链应用直接把他们的功能整合进他们的后端。下面是一些在Lisk区块链应用中执行具体功能的例子：</p>
+<p>\</p>
+<ul>
+<li>  在区块链程序中授权</li>
+</ul>
+<p>可以依赖Lisk<br>APIs。用户可以简单使用Lisk密码，可以转换成相同的区块链应用账号。</p>
+<p>\</p>
+<ul>
+<li>  发送消息，写博客</li>
+</ul>
+<p>添加新的交易类型，允许添加要求范围长度的文本等。可以创建去中心化的消息服务、社交网络以及博客系统。甚至可以开发投票系统。</p>
+<p>\</p>
+<ul>
+<li>  设置标志</li>
+</ul>
+<p>增加新的交易类型，设置正确或错误的状态。可以创建去中心化的IoT应用等。</p>
+<p>\</p>
+<ul>
+<li>  产生随机数字</li>
+</ul>
+<p>每个在Lisk区块链应用计算中需要确定性，意味着每个节点执行区块链应用必须出来相同的结果。开发者无法使用随机的JavaScript<br>功能，不得不依赖其他方法。例如计算下10个区块id的随机数字等。</p>
+<p>\</p>
+<p><strong>四、Lisk的团队和路线图</strong></p>
+<p>**<br>**</p>
+<p>创始人Max Kordek 和Oliver<br>Beddows是两位开发者，曾在Crypti合作过，两人业界名声不错，合作也紧密，区块链开发知识丰富。截止到目前为止团队所有21位成员全部公开身份，这也是一种自信表现，不像之前有些项目的成员，甚至创始人各种改名。</p>
+<p>\</p>
+<p><img src="images/20170928_205100_1_3.jpeg">（Lisk团队成员合影，后排左起第三和第四位是两位创始人）</p>
+<p>\</p>
+<p>团队在资金使用上比较慎重，有打持续战的准备，预计资金至少用5年以上。Lisk有一个比较清晰的里程碑，让人印象深刻。一共五个阶段：Inception（成立）、Resilience（弹性）、Expansion（扩张）、Ascent（上升）、Eternity（永恒）。</p>
+<p>\</p>
+<p>其中inception主要是维持主链的稳定、打造矿工回报机制、启动生态基础建设、把Lisk-CII合并进Lisk<br>App SDK，维持 lisk App SDK稳定。目前这一阶段基本完成。</p>
+<p>\</p>
+<p>现在进入第二阶段Resilience，这一阶段的主要是大幅提升Lisk平台，让它成为可靠的区块链应用平台，拥有优雅的核心系统、更好的Lisk<br>App<br>SDK，各种有用的功能，易用的用户界面，以及安全性。这个阶段在所有五个阶段中工作最为庞大，有6个里程碑，在完成这个阶段后，Lisk试图在数字资产市场独树一帜。这个阶段包括了：重新梳理品牌、守护进程、Lisk<br>App SDK的模块化、基本应用功能、移动客户端及代码重构。</p>
+<p>\</p>
+<p>第三阶段是Expansion，主要增加更多应用功能、支持智能合约、支持第三方技术等。第四阶段是Ascent，一是构建完全去信任的区块链应用，任何单个实体无法关闭网络，二是随着发展，安全、优化、可扩展以及可能的共识层的变化都是可能聚焦的方面。最后是Eternity，是路线图的最后一步，最重要的是关于治理问题。比如完善去中心化的投票机制、以去中心化的方式增加建议、收集LSK持有人的意见等。到了最后的阶段，LSK将由16个知名的管理人通过多重签名账户共同管理。</p>
+<p>\</p>
+<p>从里程碑的规划看，团队是富有远见和雄心壮志，且能脚踏实地，从目前一年多的执行实施来看，基本上还是靠谱的。</p>
+<p>\</p>
+<p><strong>五、结语</strong></p>
+<p>**<br>**</p>
+<p>目前几千万美元的估值的BTC资金可以让团队在较长时间内专注开发并逐步实现路线图。从长期投资的角度，Lisk值得考虑。不过目前它的估值稍微有点高，可以等待合适的时机进入。</p>
+<p>\</p>
+<p>如果区块链应用开发的需求越来越大，Lisk的机会越来越大。以太坊有超过200亿美元的估值，而Lisk是不是也有这样的机会？目前是6亿多美元的估值，如果一旦生态起来，达到几十亿数百亿美金的估值也并非不可能。它目前相对于以太坊的优势是所有的Lisk应用都跑在自己的侧链上，这样它有更大的机会扩展到主流的用户中。如有一天Lisk网络成为领先的区块链技术，成为创业公司创建去中心化应用的首要选择，那么，投资Lisk将会获得的非常丰厚的回报。</p>
+<p>\</p>
+<p>当然任何投资都是有风险的，任何一个小的因素都可能影响最终结局，比如说更好的竞争对手出来更好的产品，比如说区块链市场发展趋势并不需要这样的方式来解决开发者开发区块链门槛的问题，诸如此类，很多长期不可预见的因素都会产生深刻影响。</p>
+<p>\</p>
+<p>总之，Lisk是去中心化的网络，有自己的区块链，用于帮助开发者创建各种各样的自定义侧链。Lisk的价值取决于其网络生态能否成功，包括开发者、程序员及创业公司是否愿意采用。它并不是数字货币，它跟比特币不同，它并不是价值存储或支付手段。它成长的驱动力来源于其技术被大规模采用，同时在此基础上投资者的长远推动的兴趣。由于它用JavaScript作为编程语言，JavaScript是世界上最通用的编程语言之一，包括微软和谷歌都在用，这为Lisk提供了一个可能性，数量众多的程序员和创业者都可能参与到Lisk网络中来。Lisk与微软Azure达成伙伴关系，全世界的开发者可以用微软Azure进行开发、测试及部署Lisk区块链。</p>
+<p>\</p>
+<p>当然，同样也有风险。比如区块链应用本身的需求并不强烈，或者有更好的区块链平台，可以提供更好的功能。这对Lisk的价值都会有很大的影响。以太坊今天值200多个亿美元，最大原因之一是金融领域对于开发智能合约有较大需求。能够落地的需求才是支撑长远估值的核心因素。另外，在开发者没有达到一定的程度，整个Lisk生态没有其它来之前，没有更大的社区粉丝之之前，要想达到以太坊和比特币的高度还需要很长很长的路要走。（更多深度案例分析请点击下面二维码加入“蓝狐价值投资”知识星球（原小密圈））</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483976&idx=1&sn=90bcee556d5c8cd2b1466f453deeac6e&chksm=9b56fcdeac2175c822ee7f4069c7ff7686433c3fdb54ff599f2d739305ba0696284c46674638&scene=21#wechat_redirect">ICO到底是什么？(一)</a>\</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483980&idx=1&sn=5acea71a6f3a83c9202971f6cdfec453&chksm=9b56fcdaac2175cc34c0e0a78fd7b2a60efa5fc301031e145ffefa645a3152c37d0b29deee14&scene=21#wechat_redirect">ICO到底是什么（二）</a>\</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483994&idx=1&sn=dd44833ea7735685b54d2f0bd657ae5b&chksm=9b56fcccac2175da5553cfa156e9192fba6175c5d2c77998ba6f3b609bb9b19b60e3880bfd63&scene=21#wechat_redirect">ICO到底是什么（三）</a></p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247484006&idx=1&sn=b689aacf1049cec6e8b73eef0cccd592&chksm=9b56fcf0ac2175e61138cc23e235317057326d0680d8628807295433d283e60f6423b3b3a2b5&scene=21#wechat_redirect">ICO到底是什么（四）</a></p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247484015&idx=1&sn=6e4121a4d6fe03a890102d6b7ecd8512&chksm=9b56fcf9ac2175ef9f6e9ae7f9b85270cdc61bd138bd6d185f0b302710e880613a1790fa2fe9&scene=21#wechat_redirect">Cybermiles：全球首家链接现实商业场景的区块链平台</a>\</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247484017&idx=1&sn=289ecd42dafebb144cf0da8aa793e99a&chksm=9b56fce7ac2175f1a1f82f79120c27b266cd15d5187cfd7c6f75ec17f73680094be1d108e9a1&scene=21#wechat_redirect">不靠谱的区块链ICO项目的五个迹象</a>\</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247484006&idx=1&sn=b689aacf1049cec6e8b73eef0cccd592&chksm=9b56fcf0ac2175e61138cc23e235317057326d0680d8628807295433d283e60f6423b3b3a2b5&scene=21#wechat_redirect"></a><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247484000&idx=1&sn=732bc172bbea3af7d43d23fb379b1c43&chksm=9b56fcf6ac2175e0801f9efa6ec719f0639daf338db4af304d0f970e961fdb7aacb25a9167af&scene=21#wechat_redirect">区块链ICO投资实战小结</a></p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483916&idx=1&sn=65cdf4f7570cf0ae925ef070f194cb97&chksm=9b56fc9aac21758c318dc8d3c1adc5c41fd9ed1a8ae642fdf07037869821181b4a9eb6162321&scene=21#wechat_redirect">靠谱的区块链ICO一般长什么样？</a>\</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483921&idx=1&sn=6a4374e6ba350671119b6f111640df8c&chksm=9b56fc87ac21759154f6acea4eb00bb47ba3bd7764574397e3a2215a823dc39cbb317ed0e014&scene=21#wechat_redirect">ICO回报率超过10倍的项目都有哪些？</a></p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483975&idx=1&sn=69014d8e6e83e570b79c2bfc20ff72ad&chksm=9b56fcd1ac2175c7c2bfa3dc16ba84f307fecd9813d0088e23502cadcb4224a8bd01fdbeaf8e&scene=21#wechat_redirect">区块链ICO项目回报率头牌stratis：为什么能够逆袭？</a></p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483941&idx=1&sn=8c7fe98fda5943d411d8d780338d60cf&chksm=9b56fcb3ac2175a5dc83423bda4a012e4e9bea74d6ae3e8921ff2983b66dfff7be4672f445e4&scene=21#wechat_redirect">区块链投资的底层逻辑：是否看好它对生产关系的变革产生真正影响</a></p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483963&idx=1&sn=d8bcda495228ff537351c88fa2a27b16&chksm=9b56fcadac2175bb7814278ca72068c5b0b01414f160ce85387cd981c61367f015aeaf4f7658&scene=21#wechat_redirect">史上第一妖币：chaincoin的逆市上涨超2万多倍</a>\</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483983&idx=1&sn=d6a858d916772dbb6fc0673e2471309a&chksm=9b56fcd9ac2175cf487ba980b34d991abd4f69d28f1aa94f1a813132791067d5a922a19fd104&scene=21#wechat_redirect">关于ICO市场乱象：有人在圈钱，但不是所有人</a></p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483993&idx=1&sn=d5619cf8ece6e998cfdc6fde45229c13&chksm=9b56fccfac2175d910891e5f0a900e1e042644277ee44ae25dbd2a3317678ebc5c680e0e1520&scene=21#wechat_redirect">ICO乱象一二</a>\</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483934&idx=1&sn=f4f9929720b1b74c93ea3361ed6f6734&chksm=9b56fc88ac21759e765b99e8510ea5ee80eab85412bc7142fd5373a78024a1616d01116c7a52&scene=21#wechat_redirect">ICO诈骗术：假冒网站伪装成为ICO项目网站骗取ETH</a>\</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483935&idx=1&sn=ee7921978daa760de00ca77de86b3c9d&chksm=9b56fc89ac21759f2eb32ed47a4ac44278b9b255578fa5a88cb0208c0fc31aab711f6249ae42&scene=21#wechat_redirect">数字资产平台格局：以太坊生态初步形成</a>\</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483964&idx=1&sn=34cb13873d024d4bce281d871b265764&chksm=9b56fcaaac2175bcdbf73f9f67b08fc4e6b9c23c224e4a0d68d8cfea252dece1ceafe12eea00&scene=21#wechat_redirect">保险行业的区块链应用ICO项目</a></p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzAwOTk1NjM0NQ==&mid=2247483913&idx=1&sn=cbe309232fd813cf2ccd4ebb4166d305&chksm=9b56fc9fac2175894bef11f9eb74206e3cf8d52b9a58941b565e4059f18300e323a395682472&scene=21#wechat_redirect">ICO：高收益与高风险，玩加密代币黄金时代到来了吗</a>\</p>
+<p>如果你对区块链投资、数字资产投资感兴趣，欢迎加入“蓝狐-区块链价值投资”知识星球（原小密圈），社区有案例独家深度剖析，跟一群有实战经验的小伙伴们交流碰撞，一起挖掘出高回报的项目，并获得长期投资的高收益，加入链接：<a target="_blank" rel="noopener" href="http://t.xiaomiquan.com/7Yjm6eq">http://t.xiaomiquan.com/7Yjm6eq</a> 也可扫描或长按下面的二维码加入：</p>
+<p><img src="images/20170928_205100_1_4.jpeg"></p>
+<p>\</p>
+<p>\</p>
+<p>预览时标签不可点</p>
+<p>收录于话题 #</p>
+<p>个**</p>
+<p>上一篇 下一篇</p>
+<p>阅读</p>
+<p>分享</p>
+<p>收藏</p>
+<p>赞</p>
+<p>在看</p>
+<p>****已同步到看一看<a href="javascript:;">写下你的想法</a></p>
+<p>前往“发现”-“看一看”浏览“朋友在看”</p>
+<p><img src="images/20170928_205100_1_5.png"></p>
+<p>前往看一看</p>
+<p><strong>看一看入口已关闭</strong></p>
+<p>在“设置”-“通用”-“发现页管理”打开“看一看”入口</p>
+<p><a href="javascript:;">我知道了</a></p>
+<p>**</p>
+<p>已发送</p>
+<p>取消 **</p>
+<h4 id="发送到看一看-like-comment-primary-title"><a href="#发送到看一看-like-comment-primary-title" class="headerlink" title="发送到看一看 {.like_comment_primary_title}"></a>发送到看一看 {.like_comment_primary_title}</h4><p>发送</p>
+<p>Lisk:用JavaScript也能创建区块链应用</p>
+<p>最多200字，当前共字</p>
+<p>**</p>
+<p>发送中</p>
+<p>喜欢此内容的人还喜欢</p>
+<p><img src=""></p>
+<p>微信扫一扫<br>关注该公众号</p>
+<p><img src=""> 微信扫一扫<br>使用小程序</p>
+<hr>
+<p><a href="javascript:void(0);">取消</a> <a href="javascript:void(0);">允许</a></p>
+<hr>
+<p><a href="javascript:void(0);">取消</a> <a href="javascript:void(0);">允许</a></p>
+<p><strong>微信版本过低</strong></p>
+<p>当前微信版本不支持该功能，请升级至最新版本。</p>
+<p><a href="javascript:void(0);">我知道了</a> <a href="javascript:void(0);">前往更新</a></p>
+<p>确定删除回复吗？</p>
+<p><a href="javascript:;">取消</a> <a href="javascript:;">删除</a></p>
+<p><a href="javascript:;">知道了</a></p>
+<p><strong>长按识别前往小程序</strong></p>
+<p><img src=""></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 风险警示：蓝狐笔记所有文章都不能作为投资建议或推荐，投资有风险，投资应该考虑个人风险承受能力，建议对项目进行深入考察，慎重做好自己的投资决策。加入蓝狐笔记的知识星球：https://t.zsxq.com/Iq3VzfM 欢迎加入蓝狐笔记群微信：donnell008 </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: 'f5a58fb44b6c36f2f7a5',
+            clientSecret: 'e89383b1fa0e7d131e126d4a976299cbee4a96c4',
+            repo: 'structuralhole.github.io',
+            owner: 'structuralhole',
+            admin: ['structuralhole'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 蓝狐笔记
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
